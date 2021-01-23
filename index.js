@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 const bodyParser = require('body-parser') // 클라이언트에서 오는 정보를 서버에서 분석해서 가져올 수 있게 해줌
 const { User } = require('./models/User')
+// cd Users/yu/Desktop/study/react/inflearn/reactandexpress
 
 const config = require('./config/key')
 
