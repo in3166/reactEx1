@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 5000
 const bodyParser = require('body-parser') // 클라이언트에서 오는 정보를 서버에서 분석해서 가져올 수 있게 해줌
 const cookieParser = require('cookie-parser') // 클라이언트에서 오는 정보를 서버에서 분석해서 가져올 수 있게 해줌
 const { User } = require('./models/User')
@@ -35,8 +35,8 @@ app.post('/api/users/register', (req, res) => {
 })
 
 app.post('/api/users/login', (req, res) => {
-    // 요청된 이메일 DB에서 찾기
 
+    // 요청된 이메일 DB에서 찾기
     User.findOne({ email: req.body.email }, (err, user) => {
         if (!user) {
             return res.json({
@@ -67,7 +67,7 @@ app.post('/api/users/login', (req, res) => {
 
 
 // auth 미들웨어, url로 요청을 받고 콜백을 실행하기 전에 처리
-app.post('/api/users/auth', auth, (req, res) => {
+app.get('/api/users/auth', auth, (req, res) => {
     // auth: true
     res.status(200).json({
         _id: req.user._id,
