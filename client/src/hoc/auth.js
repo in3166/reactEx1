@@ -37,9 +37,5 @@ export default function (SpecifiComponent, option, adminRoute = null) {
             <SpecifiComponent />
         )
     }
-
-
-
-
     return AuthenticationCheck
 }
